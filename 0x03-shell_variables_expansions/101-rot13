@@ -1,16 +1,2 @@
 #!/bin/bash
-
-read -p "Enter the name of the file: " filename
-
-if [ -f "$filename" ]; then
-    lines=0
-    while IFS= read -r line; do
-        ((lines++))
-        if ((lines % 2 != 0)); then
-            echo "$line"
-        fi
-    done < "$filename"
-else
-    echo "File not found."
-fi
-
+tr `echo {a..z} | tr -d ' '` `echo {n..z} $(echo {a..m} | tr -d ' '` | tr `echo {A..Z} | tr -d ' '` | tr `echo {A..Z} | tr -d ' '` `echo{N..Z} $(echo {A..M}) | tr -d' '`
